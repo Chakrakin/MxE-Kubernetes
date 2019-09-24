@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mxe-java
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: mxe-java
+        type: mxe
+    spec:
+      containers:
+        - name: mxe-java
+          image: mxe-java-api-spring
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080

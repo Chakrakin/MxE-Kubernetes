@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mxe-python
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: mxe-python
+        type: mxe
+    spec:
+      containers:
+        - name: mxe-python
+          image: mxe-python-api-flask
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000

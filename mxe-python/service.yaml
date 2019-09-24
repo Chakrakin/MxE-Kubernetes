@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mxe-python-service
+spec:
+  selector: mxe-python
+  ports:
+  - port:6000
+    targetPort: 5000
+  type: LoadBalancer
