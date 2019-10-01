@@ -1,0 +1,11 @@
+claimName: postgres-pv-claim
+volumeName: postgres-pv-volume
+secretName: postgres-secret
+
+port: 5432
+servicePort: 32432
+replicas: 1
+
+storagePath: /mnt/storage
+storageSize: 2Gi
+mountPath: /var/lib/postgresql

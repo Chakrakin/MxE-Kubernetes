@@ -1,0 +1,8 @@
+name: mxe-python
+appType: mxe
+replicas: 3
+image: mxe-python-api-flask
+imagePullPolicy: Never
+hostedPort: 7003
+containerPort: 5000
+serviceType: LoadBalancer

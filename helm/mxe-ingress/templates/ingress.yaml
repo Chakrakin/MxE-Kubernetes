@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: mxe-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: microxends.data
+      http:
+        paths:
+          - path: /java
+            backend:
+              serviceName: mxe-java-service
+              servicePort: 7001
+          - path: /node
+            backend:
+              serviceName: mxe-node-service
+              servicePort: 7002
+          - path: /python
+            backend:
+               serviceName: mxe-python-service
+               servicePort: 7003

@@ -1,0 +1,8 @@
+name: mxe-node
+appType: mxe
+replicas: 3
+image: mxe-node-api-express
+imagePullPolicy: Never
+hostedPort: 7002
+containerPort: 3000
+serviceType: LoadBalancer

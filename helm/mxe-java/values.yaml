@@ -1,0 +1,8 @@
+name: mxe-java
+appType: mxe
+replicas: 3
+image: mxe-java-api-spring
+imagePullPolicy: Never
+hostedPort: 7001
+containerPort: 8080
+serviceType: LoadBalancer
