@@ -19,6 +19,13 @@ spec:
         containers:
           - name: {{ .Values.name }}
             image: {{ .Values.image }}
-            imagePullPolicy: {{ .Values.imagePullPolicy }}
+            imagePullPolicy: "{{ .Values.imagePullPolicy }}"
+            env:
+              - name: MONGODB_HOST
+                value: {{ .Values.mongodb.hostdns }}
+              - name: MONGODB_PORT
+                value: {{ .Values.mongodb.port | quote}}
+              - name: MONGODB_DBNAME
+                value: {{ .Values.mongodb.dbname }}
             ports:
               - containerPort: {{ .Values.containerPort }}

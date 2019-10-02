@@ -13,6 +13,13 @@ helm install stable/chartmuseum --version 2.3.2
 ### Helm charts
 #### Push each to helm chartmuseum
 f.e. ```helm push mxe-python chartmuseum```
+#### For repos with dependencies (f.e. mxe-java)
+run ```helm dep update```
+this will load the dependency-charts into a charts folder and creates a requirements.lock file
+
+```this is mandatory for charts with dependencies```
+delete requirements.lock and charts folder if needed
+
 #### Install via helm (name comes from Chart.yaml)
 f.e. ```helm install mxe-python```
 

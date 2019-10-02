@@ -2,7 +2,11 @@ name: mxe-java
 appType: mxe
 replicas: 3
 image: mxe-java-api-spring
-imagePullPolicy: Never
+imagePullPolicy: IfNotPresent
 hostedPort: 7001
 containerPort: 8080
 serviceType: LoadBalancer
+mongodb:
+  hostdns: mongodb
+  port: 27017
+  dbname: provisioned

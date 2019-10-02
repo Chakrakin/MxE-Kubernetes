@@ -1,9 +1,4 @@
 dependencies:
-#  bitnami version of postgres
-#  - name: bitnami/postgresql
-#    version: 6.3.9
-#    repository: https://charts.bitnami.com
-# try to create/install an own postgres chart
-  - name: own-postgres
+  - name: own-mongodb
     version: 0.1.0
-    repository: http://192.168.99.101:30010/charts
+    repository: http://192.168.99.102:30010

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: mongodb
+    labels:
+        app: mongodb
+        release: {{ .Release.Name }}
+spec:
+    replicas: {{ .Values.replicas }}
+    selector:
+        matchLabels:
+            app: mongodb
+    template:
+        metadata:
+            labels:
+                app: mongodb
+        spec:
+            containers:
+                - name: mongodb
+                  image: mongo:4.0.12
+                  ports:
+                      - containerPort: 27017
+                  volumeMounts:
+                      - name: mongomnt
+                        mountPath: {{ .Values.mountPath }}
+            volumes:
+                - name: mongomnt
+                  persistentVolumeClaim:
+                      claimName: {{ .Values.claimName }}

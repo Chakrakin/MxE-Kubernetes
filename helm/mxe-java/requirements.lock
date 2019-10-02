@@ -1,0 +1,6 @@
+dependencies:
+- name: own-mongodb
+  repository: http://192.168.99.102:30010
+  version: 0.1.0
+digest: sha256:8ef24c92db40e2cdd08963dfb376c6e7b40fec5a06a2273f12390ddfc3efe598
+generated: "2019-10-01T14:35:11.17173+02:00"

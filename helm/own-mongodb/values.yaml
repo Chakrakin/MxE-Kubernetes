@@ -1,0 +1,10 @@
+claimName: mongo-pv-claim
+volumeName: mongo-pv-volume
+
+port: 27017
+servicePort: 30017
+replicas: 1
+
+storagePath: /mnt/storage
+storageSize: 1Gi
+mountPath: /var/lib/mongodb
